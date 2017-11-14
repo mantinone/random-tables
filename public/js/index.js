@@ -4,8 +4,10 @@ const rollTable = function( table ) {
   return cdfTable
 }
 
-console.log(rollTable(smallTable));
-console.log(rollTable(encounterChances));
+const randomRange = function ( max, min=1 ){
+  let size = max - min
+  return Math.floor( Math.random()*(size + 1) ) + min
+}
 
 document.addEventListener( "DOMContentLoaded", function(event) {
   console.log('Dom content loaded worked');
