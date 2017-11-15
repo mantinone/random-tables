@@ -2,7 +2,7 @@ const rollTable = function( table ) {
   let probabilitySum = 0
   let cdfTable = table.map( ( entry ) => probabilitySum += entry.probability )
   let index = searchTable( cdfTable, randomRange(cdfTable[cdfTable.length-1]))
-  return table[index].text
+  return table[index]
 }
 
 const randomRange = function ( max, min=1 ){
