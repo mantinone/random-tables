@@ -7,11 +7,13 @@ table {
   border-collapse: collapse;
   background-color: #fefddf;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  margin: 5px;
 }
 
 td, th {
   border: 1px solid #bbb;
   padding: 8px;
+  padding-right: 14px;
 }
 
 tr:nth-child(even){background-color: #cae6c3}
