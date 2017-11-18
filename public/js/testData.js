@@ -11,6 +11,14 @@ environmentLocations.push( new Entry( 1, 'Ruined Wagon / Gnarled Tree with cool 
 environmentLocations.push( new Entry( 1, "Farmer's field / Bramble Path / Mining Ruins"))
 environmentLocations.push( new Entry( 1, "Holes Everywhere / Lost Woods Loop / Magic Ice Crystals"))
 
+const caveShops = []
+caveShops.push( new Entry( 1, 'Potion shop'))
+caveShops.push( new Entry( 1, 'Food and Ammo shop'))
+caveShops.push( new Entry( 1, 'Gambling game'))
+caveShops.push( new Entry( 1, 'Foraged shop'))
+caveShops.push( new Entry( 1, 'Rare material shop'))
+caveShops.push( new Entry( 1, 'Spooky Shop (buy and sell rare magic items)'))
+
 const caveEncounters = []
 caveEncounters.push( new Entry( 1, 'Cow alone in cave, can be heard mooing from outside'))
 caveEncounters.push( new Entry( 1, 'Empty Cave, safe rest.  Weird dreams.'))
@@ -34,19 +42,9 @@ caveEntrances.push( new Entry( 1, 'Part of a spirit shrine'))
 caveEntrances.push( new Entry( 1, 'Entrance is trapped'))
 caveEntrances.push( new Entry( 1, 'Climbing up a cliff wall'))
 
-const caveShops = []
-caveShops.push( new Entry( 1, 'Potion shop'))
-caveShops.push( new Entry( 1, 'Food and Ammo shop'))
-caveShops.push( new Entry( 1, 'Gambling game'))
-caveShops.push( new Entry( 1, 'Foraged shop'))
-caveShops.push( new Entry( 1, 'Rare material shop'))
-caveShops.push( new Entry( 1, 'Spooky Shop (buy and sell rare magic items)'))
-
-
 const weirdFlora = []
 weirdFlora.push( new Entry( 1, "Laugh-Apple tree"))
 weirdFlora.push( new Entry( 1, "Goodberry bushes"))
-
 
 const cabins = []
 cabins.push( new Entry( 1, "A witch's hut"))
@@ -93,12 +91,12 @@ warPartyMounts.push( new Entry( 1, "1d4-1 Manticores") )
 
 const warParty = [ warPartyLocation, warPartyCommander, warPartySoldiers, warPartyMounts]
 
-const ordinaryWildlife = []
-ordinaryWildlife.push( new Entry( 1, "Bears") )
-ordinaryWildlife.push( new Entry( 1, "Elk") )
-ordinaryWildlife.push( new Entry( 1, "Goats") )
-ordinaryWildlife.push( new Entry( 1, "Wolves") )
-ordinaryWildlife.push( new Entry( 1, "Boars") )
+const wildlife = []
+wildlife.push( new Entry( 1, "Bears") )
+wildlife.push( new Entry( 1, "Elk") )
+wildlife.push( new Entry( 1, "Goats") )
+wildlife.push( new Entry( 1, "Wolves") )
+wildlife.push( new Entry( 1, "Boars") )
 
 const criphonans = []
 criphonans.push( new Entry( 1, "Castle Patrol") )
