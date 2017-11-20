@@ -1,8 +1,14 @@
-let currentTable = creatureEncounters
+let currentTable = locationEncounters
 
 document.addEventListener( "DOMContentLoaded", function(event) {
   let table1 = document.getElementById('table1').getElementsByTagName('tbody')[0];
+  let rollButton = document.getElementById('rollButton')
+  let results = document.getElementById('result')
   buildTable( currentTable, table1 )
+  rollButton.addEventListener('click', () => {
+    let roll = rollTable(currentTable)
+    results.innerText = roll.text
+  })
 })
 
 const buildTable = function ( array, htmlTable ){
