@@ -20,6 +20,16 @@ const buildTable = function ( array, htmlTable ){
     textCell.innerText = item.text
     if (item.subTable) {
       textCell.innerText += '  --->'
+      newRow.addEventListener( 'click', subTable )
     }
   })
+}
+
+const subTable = function ( event ){
+  const index = event.target.parentNode.rowIndex - 1
+  const subTable = currentTable[index].subTable
+  let container = document.getElementsByClassName('tableContainer')[0]
+  let newTable = document.createElement("table")
+  buildTable( subTable, newTable )
+  container.appendChild(newTable)
 }
