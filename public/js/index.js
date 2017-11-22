@@ -1,4 +1,4 @@
-let currentTable = locationEncounters
+let currentTable = encounterChances
 
 document.addEventListener( "DOMContentLoaded", function(event) {
   let table1 = document.getElementById('table1').getElementsByTagName('tbody')[0];
