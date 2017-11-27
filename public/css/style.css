@@ -3,6 +3,11 @@ body {
   padding-left: 15px;
 }
 
+.tableContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 table {
   border-collapse: collapse;
   background-color: #fefddf;
