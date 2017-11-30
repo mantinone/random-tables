@@ -85,7 +85,7 @@ const hideTable = function ( event ) {
   const theDiv = event.target.parentNode
   const container = theDiv.parentNode
   const nodeList = container.childNodes
-
+  //TODO, move this into a function so I can be used elsewhere
   for( let i = nodeList.length - 1; i > 0; i-- ){
     if( nodeList[i].dataset ) {
       if( nodeList[i].dataset.number >= currentPosition ){
