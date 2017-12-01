@@ -15,8 +15,10 @@ document.addEventListener( "DOMContentLoaded", function(event) {
 
 //Function for rolling on table when the roll button is clicked. Rename?
 const buttonClick = function ( table ) {
+  //Get results html element and clear it
   let resultsLabel = document.getElementById('result')
   let resultText = ''
+  //Roll and format text
   let roll = rollTable(table)
   resultText += roll.text
   if ( roll.subTable ) {
@@ -48,7 +50,9 @@ const buildTable = function ( array, htmlTable ){
 
 //Click on a table entry with a sub table and this will display the sub table
 const subTable = function ( event ){
-  displayNumber++
+  const currentPosition = event.target.parentNode.parentNode.parentNode.parentNode.dataset.number
+  removeUpstreamTables( currentPosition )
+  displayNumber = parseInt(currentPosition) + 1
   //Set up variables
   const index = event.target.parentNode.rowIndex - 1
   const parentTableName = event.target.parentNode.parentNode.parentNode.dataset.tableName
@@ -82,18 +86,21 @@ const insertRow = function ( table ) {
 //Deletes a sub-table from the UI when you click its hide button.
 const hideTable = function ( event ) {
   const currentPosition = event.target.parentNode.dataset.number
-  const theDiv = event.target.parentNode
-  const container = theDiv.parentNode
+  removeUpstreamTables( currentPosition - 1)
+  displayNumber = currentPosition - 1
+}
+//Utility for removing all tables upstream
+const removeUpstreamTables = function ( position ) {
+  const container = document.getElementsByClassName('tableContainer')[0]
   const nodeList = container.childNodes
 
   for( let i = nodeList.length - 1; i > 0; i-- ){
     if( nodeList[i].dataset ) {
-      if( nodeList[i].dataset.number >= currentPosition ){
+      if( nodeList[i].dataset.number > position ){
         container.removeChild( nodeList[i] )
       }
     }
   }
-  displayNumber = currentPosition - 1
 }
 
 const makeHideButton = function () {
