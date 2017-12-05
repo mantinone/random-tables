@@ -6,6 +6,13 @@ class Entry {
   }
 }
 
+class Multi {
+  constructor ( text = 'no text provided', subTable = null ){
+    this.text = text
+    this.subTable = subTable
+  }
+}
+
 const environmentLocations = []
 environmentLocations.push( new Entry( 1, 'Ruined Wagon / Gnarled Tree with cool stuff / Chasm with bridge'))
 environmentLocations.push( new Entry( 1, "Farmer's field / Bramble Path / Mining Ruins"))
@@ -56,7 +63,7 @@ cabins.push( new Entry( 1, "No one is home"))
 
 const locationEncounters = []
 locationEncounters.push( new Entry( 3, 'Environment Specific', environmentLocations))
-locationEncounters.push( new Entry( 5, 'Cave Encounter', [caveEntrances, caveEncounters]))
+locationEncounters.push( new Entry( 5, 'Cave Encounter', [new Multi( 'Cave Entrances', caveEntrances), new Multi( 'Cave Encounters', caveEncounters)]))
 locationEncounters.push( new Entry( 2, 'Weird Flora', weirdFlora))
 locationEncounters.push( new Entry( 1, 'Watering Hole'))
 locationEncounters.push( new Entry( 1, 'Big rock or cliff'))
@@ -89,7 +96,7 @@ warPartyMounts.push( new Entry( 2, "1d4-1 Giant Boars") )
 warPartyMounts.push( new Entry( 1, "1d4-1 Griffins") )
 warPartyMounts.push( new Entry( 1, "1d4-1 Manticores") )
 
-const warParty = [ warPartyLocation, warPartyCommander, warPartySoldiers, warPartyMounts]
+const warParty = [ new Multi( 'War Party Location', warPartyLocation), new Multi( 'Commander', warPartyCommander), new Multi( 'Soldiers', warPartySoldiers), new Multi( 'Mounts', warPartyMounts)]
 
 const wildlife = []
 wildlife.push( new Entry( 1, "Bears") )
@@ -145,5 +152,5 @@ const encounterChances = []
 encounterChances.push( new Entry( 12, "No Encounter") )
 encounterChances.push( new Entry( 3, "LocationEncounter", locationEncounters) )
 encounterChances.push( new Entry( 2, "Creature Encounter", creatureEncounters) )
-encounterChances.push( new Entry( 3, "Both", [locationEncounters, creatureEncounters]) )
+encounterChances.push( new Entry( 3, "Both", [new Multi( 'Location Encounters', locationEncounters), new Multi( 'Creature Encounters', creatureEncounters)]) )
 
