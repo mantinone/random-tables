@@ -23,12 +23,13 @@ const buttonClick = function ( table ) {
   resultText += roll.text
   if ( roll.subTable ) {
     resultText += ' -> '
+    console.log('Were doing it');
     if( roll.subTable[0] instanceof Entry ){
       resultText += buttonClick( roll.subTable )
     } else {
       roll.subTable.forEach( ( table ) => {
         resultText += '('
-        resultText += buttonClick( table )
+        resultText += buttonClick( table.subTable )
         resultText += ')'  })
     }
   }
@@ -39,7 +40,7 @@ const buttonClick = function ( table ) {
 const buildTable = function ( array, htmlTable ){
   array.forEach( ( item ) => {
     let [newRow, weightCell, textCell ] = insertRow( htmlTable )
-    weightCell.innerText = item.probability
+    weightCell.innerText = item.probability || ''
     textCell.innerText = item.text
     if (item.subTable) {
       textCell.innerText += '  --->'
