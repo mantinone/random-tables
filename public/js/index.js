@@ -23,7 +23,6 @@ const buttonClick = function ( table ) {
   resultText += roll.text
   if ( roll.subTable ) {
     resultText += ' -> '
-    console.log('Were doing it');
     if( roll.subTable[0] instanceof Entry ){
       resultText += buttonClick( roll.subTable )
     } else {
