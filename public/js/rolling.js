@@ -4,6 +4,7 @@ const rollTable = function( table ) {
   return table[index]
 }
 
+//Use the probability weights to construct a "dice roll" table.
 const calculateCdf = function ( table ) {
   let probabilitySum = 0
   return table.map( ( entry ) => probabilitySum += entry.probability )
@@ -14,6 +15,7 @@ const randomRange = function ( max, min=1 ){
   return Math.floor( Math.random()*(size + 1) ) + min
 }
 
+//Use binary search to find which entry we rolled
 const searchTable = function ( table, roll ){
   let found = false
   let leftIndex = 0
