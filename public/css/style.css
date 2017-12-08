@@ -13,6 +13,7 @@ table {
   background-color: #fefddf;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   margin: 5px;
+  min-width: 240px;
 }
 
 td, th {
