@@ -2,7 +2,7 @@
 A tool to create and roll on random tables for Tabletop RPGs
 
 In the future, the plan is to have a User Interface that will allow you to easily construct your own tables, but that functionality will take a while to build.  
-Currently, if you wish to customize your tables, you may do so by editing the ***public/js/tableData.js*** file.
+Currently, if you wish to customize your tables, you may do so by downloading the project and editing the ***public/js/tableData.js*** file.
 
 ## To Run
 
