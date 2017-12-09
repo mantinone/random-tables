@@ -12,7 +12,7 @@ In your web browser, open the **public/index.html** file.
 
 It will automatically load in whatever data is in the ***pubic/js/tableData.js*** file.
 
-Hit the "roll table" button to get a random result.  Click on the actual table entries to expand sub-tables.
+Hit the "roll table" button to get a random result.  Click on the actual table entries to view sub-tables.
 
 ## To Edit Tables
 
