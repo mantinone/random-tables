@@ -20,7 +20,7 @@ const searchTable = function ( table, roll ){
   let found = false
   let leftIndex = 0
   let rightIndex = table.length-1
-  let middleIndex = 0
+  let middleIndex
   while( !found ){
     middleIndex = Math.floor((rightIndex-leftIndex)/2 + leftIndex)
     if( roll === table[middleIndex]){
