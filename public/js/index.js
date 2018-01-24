@@ -1,14 +1,14 @@
-let displayedTables = { currentTable: encounterChances }
+let displayedTables = { rootTable: encounterChances }
 let displayNumber = 1
 
 document.addEventListener( "DOMContentLoaded", function(event) {
   let rootTable = document.getElementById('rootTable');
   let rollButton = document.getElementById('rollButton')
   let resultsLabel = document.getElementById('result')
-  rootTable.dataset.tableName = "currentTable"
-  buildTable( displayedTables.currentTable, rootTable )
+  rootTable.dataset.tableName = "rootTable"
+  buildTable( displayedTables.rootTable, rootTable )
   rollButton.addEventListener('click', () => {
-    resultsLabel.innerText = rollButtonClicked(displayedTables.currentTable)
+    resultsLabel.innerText = rollButtonClicked(displayedTables.rootTable)
   })
 })
 
@@ -52,6 +52,7 @@ const buildTable = function ( array, htmlTable ){
 
 //Click on a table entry with a sub table and this will display the sub table
 const subTable = function ( event ){
+  //Relative position stuff, kinda messy?
   const clickedTable = event.target.parentNode.parentNode.parentNode
   const currentPosition = clickedTable.parentNode.dataset.number
   removeUpstreamTables( currentPosition )
